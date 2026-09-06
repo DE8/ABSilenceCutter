@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "absilencecutter"
+version = "1.0.0"
+description = "Compress silences in chaptered M4B audiobooks while preserving metadata, cover art, and retimed chapters."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Unlicense" }
+authors = [
+  { name = "YOUR_NAME" },
+]
+keywords = ["audiobook", "m4b", "ffmpeg", "silence", "cli"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "License :: Public Domain",
+  "Operating System :: OS Independent",
+  "Topic :: Multimedia :: Sound/Audio"
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/DE8/ABSilenceCutter.git"
+Repository = "https://github.com/DE8/ABSilenceCutter.git"
+Issues = "https://github.com/DE8/ABSilenceCutter.git/issues"
+
+[project.scripts]
+ab-silence-cutter = "ABSilenceCutter:main"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["ABSilenceCutter.py"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/ABSilenceCutter.py",
+  "/README.md",
+  "/pyproject.toml",
+]
